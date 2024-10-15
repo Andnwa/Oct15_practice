@@ -12,7 +12,8 @@ bonds[bonds$Votes_Total== max(bonds$Votes_Total),]
 
 # New subset of data of approved bonds with at least 100 voters
 approved<-bonds[bonds$Result =='Carried'& bonds$VotesFor>=100,]
-# Graph of percentages of total votes for bond and description 
+# Graph of percentages of total votes for bond and description
+# Added comment to see what happens
 approved$Percentages<-approved$VotesFor/approved$Votes_Total
 hist(approved$Percentages, main='Percentages of Approval for Bonds',xlab='Percentages',ylab='Frequency',col ='#7AC5CD' ,xlim=c(0.4,1.25),ylim=c(0,700))
 fivenum(approved$Percentages)
